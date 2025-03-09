@@ -9,3 +9,4 @@ matplotlib==3.8.2
 seaborn==0.13.0
 opencv-python==4.8.1.78
 Pillow==10.1.0
+
