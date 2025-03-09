@@ -1,42 +1,81 @@
-# MedMNIST-Multi-Task-Classification
-Multi-Task MedMNIST competition, focusing on multi-task biomedical image classification using the MedMNIST2D dataset. The goal is to develop a model that generalizes across 11 medical imaging tasks, evaluated using the harmonic mean of macro F1 scores.
+# 🔥 Multi-Task MedMNIST with PyTorch
 
-# Tensor Reloaded: Multi-Task MedMNIST 🏥🔬  
+## 📌 Overview
+This repository contains the implementation of **Multi-Task MedMNIST** using **PyTorch** to maximize the **F1-score**. The project is part of the **Tensor Reloaded: Multi-Task MedMNIST competition**.
 
-This repository contains our solution for the **Tensor Reloaded: Multi-Task MedMNIST** competition. Our goal is to develop a deep learning model that **maximizes the F1-score** across multiple medical image classification tasks.  
+## 📂 Dataset
+The dataset used in this project is **MedMNIST**, which consists of multiple medical image classification tasks.
 
-## 👥 Team  
-- [**Sunny Kumar**](https://github.com/Epoch-Seeker)
-- [**Thefcraft**](https://github.com/thefcraft)  
+### 📥 Download Dataset
+You can manually download the dataset from:
+- [MedMNIST Dataset](https://www.kaggle.com/competitions/tensor-reloaded-multi-task-med-mnist/data)
 
-## 📌 Project Overview  
-We focus on improving the **F1-score** by optimizing data preprocessing, augmentations, loss functions, and model architectures.  
+Or use the following Python script to download it automatically:
+```python
+import os
+import urllib.request
 
-## 📂 Dataset  
-We use **MedMNIST**, a lightweight medical image dataset containing grayscale and color images, categorized into multiple medical classes.  
+dataset_url = "kaggle competitions download -c tensor-reloaded-multi-task-med-mnist"
+dataset_path = "data/medmnist.zip"
 
-## 🛠️ Preprocessing & Transformations  
-- **Normalization:** Standardizes pixel values  
-- **Augmentations:** Rotation, flipping, color jitter, Gaussian blur  
-- **Tensor Conversion:** Converts images to PyTorch tensors  
+os.makedirs("data", exist_ok=True)
+urllib.request.urlretrieve(dataset_url, dataset_path)
+print("Dataset downloaded successfully!")
+```
 
-## 🏗️ Model Architecture  
-- **CNN backbone** with **skip connections**  
-- Adaptive pooling for dynamic feature extraction  
-- Fully connected layers with **dropout** for regularization  
-- **F1-score aware loss function** for optimization  
+## 🚀 Installation
+### **Requirements**
+Make sure you have the following dependencies installed:
+```bash
+pip install torch torchvision torchaudio
+pip install numpy pandas tqdm scikit-learn matplotlib
+```
 
-## 🚀 Training Pipeline  
-- **Objective:** Maximize F1-score  
-- **Optimizer:** Adam  
-- **Loss Function:** Weighted F1-loss (custom loss function)  
-- **Batch Size:** 256  
-- **Learning Rate Scheduling:** Cosine annealing for better convergence  
-
-## 📊 Results & Performance  
-Our experiments focus on **improving F1-score** rather than just accuracy. We test multiple architectures and fine-tune hyperparameters to achieve optimal performance.  
-
-## 🛠️ Setup & Usage  
-**Install Dependencies:**  
+Alternatively, install all dependencies using:
 ```bash
 pip install -r requirements.txt
+```
+
+## 🏗️ Project Structure
+```
+.
+├── data/                    # Dataset directory (ignored in .gitignore)
+├── models/                  # Trained model checkpoints
+├── src/
+│   ├── dataset.py           # Data loading and preprocessing
+│   ├── model.py             # Model architecture
+│   ├── train.py             # Training script
+│   ├── evaluate.py          # Evaluation script
+├── requirements.txt         # Dependencies
+├── README.md                # Project documentation
+```
+
+## 🎯 Objective
+The goal is to **maximize the F1-score** on multiple tasks using deep learning techniques.
+
+## 🏋️‍♂️ Training
+To train the model, run:
+```bash
+python src/train.py --epochs 20 --batch_size 32 --lr 0.001
+```
+
+## 📊 Evaluation
+To evaluate the model on test data:
+```bash
+python src/evaluate.py --checkpoint models/best_model.pth
+```
+
+## ✨ Results
+- The model achieves an **F1-score of XX.XX** (to be updated after evaluation).
+- Performance is benchmarked using the **MedMNIST** dataset.
+
+## 🤝 Contributors
+- [Sunny Kumar](https://github.com/Epoch-Seeker)
+- [Thefcraft](https://github.com/thefcraft)
+
+## 📜 License
+This project is licensed under the **MIT License**.
+
+---
+Feel free to contribute or raise issues for improvements! 🚀
+
