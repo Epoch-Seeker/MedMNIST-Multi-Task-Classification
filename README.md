@@ -39,13 +39,7 @@ pip install -r requirements.txt
 ## 🏗️ Project Structure
 ```
 .
-├── data/                    # Dataset directory (ignored in .gitignore)
-├── models/                  # Trained model checkpoints
-├── src/
-│   ├── dataset.py           # Data loading and preprocessing
-│   ├── model.py             # Model architecture
-│   ├── train.py             # Training script
-│   ├── evaluate.py          # Evaluation script
+├── code.ipynb  # Jupyter Notebook with full pipeline (data preprocessing, training, evaluation)
 ├── requirements.txt         # Dependencies
 ├── README.md                # Project documentation
 ```
