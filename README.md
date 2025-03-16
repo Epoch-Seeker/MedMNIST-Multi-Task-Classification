@@ -60,7 +60,7 @@ python src/evaluate.py --checkpoint models/best_model.pth
 ```
 
 ## ✨ Results
-- The model achieves an **F1-score of XX.XX** (to be updated after evaluation).
+- The model achieves an **F1-score of 70.01**.
 - Performance is benchmarked using the **MedMNIST** dataset.
 
 ## 🤝 Contributors
@@ -70,6 +70,4 @@ python src/evaluate.py --checkpoint models/best_model.pth
 ## 📜 License
 This project is licensed under the **MIT License**.
 
----
-Feel free to contribute or raise issues for improvements! 🚀
 
