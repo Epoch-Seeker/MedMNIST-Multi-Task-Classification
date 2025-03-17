@@ -27,7 +27,7 @@ print("Dataset downloaded successfully!")
 ### **Requirements**
 Make sure you have the following dependencies installed:
 ```bash
-pip install torch torchvision torchaudio
+pip install torch torchvision 
 pip install numpy pandas tqdm scikit-learn matplotlib
 ```
 
@@ -50,7 +50,7 @@ The goal is to **maximize the F1-score** on multiple tasks using deep learning t
 ## 🏋️‍♂️ Training
 To train the model, run:
 ```bash
-python src/train.py --epochs 20 --batch_size 32 --lr 0.001
+python src/train.py --epochs 20 --batch_size 256 --lr 0.001
 ```
 
 ## 📊 Evaluation
